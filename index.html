@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home - Scorecard</title> 
+    
+    <style>
+        
+        body, html {
+              height: 100%;
+              background-color: white;
+            }
+        #header{
+            
+            background-color:rgb(1, 169,130);
+            height: 120px;
+            margin: 0px;
+            padding: 0px;
+            box-shadow: 1px 10px 12px rgba(0, 0, 0, .5);
+            position: fixed;
+            z-index: 1;
+            width: 100%;
+	        right: 0px;
+            top:0px;
+        }
+        #logo{
+            height: 120px;
+            width: 250px;
+        }
+        a{
+            text-decoration: none !important;   
+            color: white;   
+        }
+        #headerElements{
+            float:right;
+            font-family: "Arial", Georgia, Serif;
+            font-size: 30px;
+            color: white;
+            margin-top:45px;
+            margin-right: 20px;
+        }
+    
+        #contentHeader{
+            position: relative;
+            top: 80px;
+            width: 96%;         
+            height: 30px;
+            font-size: 20px;
+            font-family: "Arial", Georgia, Serif;
+            margin: 20px;
+            padding-top: 20px;
+        }
+        #addManualScorecard{
+            position: relative;
+            top: 130px;
+
+            height: 46%;
+            width: 96%;
+            margin: 20px;
+            margin: 20px;
+            border: 15px;
+            border-color: rgb(1, 169,130);
+            border-style: solid;
+            box-shadow: 1px 9px 12px rgba(0, 0, 0, .5);
+        }
+        
+        #addManualOthers{
+            position: relative;
+            top: 130px;
+
+            height: 23%;
+            width: 96%;
+            margin: 20px;
+            margin: 20px;
+            border: 15px;
+            border-color: rgb(1, 169,130);
+            border-style: solid;
+            box-shadow: 1px 9px 12px rgba(0, 0, 0, .5);
+            font-family: "Arial", Georgia, Serif;
+            margin: 20px;
+            font-size: 20px;  
+        }
+        
+
+        #addAutomatic{
+            position: relative;
+            top: 130px;
+
+            height: 55%;
+            width: 96%;
+            margin: 20px;
+            margin: 20px;
+            border: 15px;
+            border-color: rgb(1, 169,130);
+            border-style: solid;
+            box-shadow: 1px 9px 12px rgba(0, 0, 0, .5);
+        }
+        
+        hr {
+            height: 5px;
+            
+            /* Set the hr color */
+            background-color: #333; /* Modern Browsers */
+        }
+        
+        #manualElements{
+            font-family: "Arial", Georgia, Serif;
+            margin: 20px;
+            font-size: 20px;   
+        }
+
+        #firsthalf{
+            float: left;
+            width: 50%;
+            text-align: left;
+        }
+        #secondhalf{
+            float: right;
+            width: 50%;
+            text-align: left;
+        }
+        
+        #thirdhalf{
+            font-family: "Arial", Georgia, Serif;
+            font-weight: bold;
+            background-color: white;
+            border: solid;
+            border-color: rgb(1, 169,130);
+            box-shadow: 1px 4px 8px rgba(0, 0, 0, .5);
+            border-width: 2px;
+            height: 40px;
+            width: 100%;
+            color: black;
+            font-size: 15px;
+            align-content: center; 
+            margin-top: 20px;
+            
+        }
+        
+        
+        #termButton{
+             font-family: "Arial", Georgia, Serif;
+            font-weight: bold;
+            background-color: white;
+            border: solid;
+            border-color: rgb(1, 169,130);
+            box-shadow: 1px 4px 8px rgba(0, 0, 0, .5);
+            border-width: 2px;
+            height: 40px;
+            width: 50%;
+            color: black;
+            font-size: 15px;
+            align-content: center; 
+            margin-top: 20px;
+        }
+        
+        #firstTerm{
+            float: left;
+            width: 33.33%;
+            text-align: left;
+            padding: 20px;
+        }
+        #secondTerm{
+            position: absolute;
+            left: 31%;
+            width: 33.33%;
+            text-align: left;
+               padding: 20px;
+        }
+        #thirdTerm{
+            float: right;
+            width: 33.33%;
+            text-align: left;
+               padding: 20px;
+                        z-index: 1;
+
+        }
+        #uploadScorecard{
+            float: left;
+            width: 50%;
+            font-family: "Arial", Georgia, Serif;
+            font-weight: bold;
+            color: white;
+            background-color: rgb(1, 169, 130);
+            text-align: center;
+            height: 50%;
+            line-height: 250px;
+            
+        }
+        #uploadCSAT{
+            float: right;
+            width: 50%;
+            font-family: "Arial", Georgia, Serif;
+            font-weight: bold;
+            text-align: center;
+            height: 50%;
+            line-height: 250px;
+        }
+        #uploadQA{
+            float: right;
+            width: 50%;
+            font-family: "Arial", Georgia, Serif;
+            background-color: rgb(1, 169, 130);
+            font-weight: bold;
+            color: white;
+            height: 50%;
+            text-align: center;
+            line-height: 250px;
+        }
+        #uploadEscalation{
+            float: left;
+            width: 50%;
+	    height: 50%;
+            line-height: 250px;
+            font-weight: bold;
+            font-family: "Arial", Georgia, Serif;
+            text-align: center;
+
+        }
+        input{
+            font-size: 20px;     
+            font-family: "Arial", Georgia, Serif;
+        }
+        
+        
+        #footer{
+            position: relative;
+            top: 150px;
+            width : 100%;
+            height: 25%;
+            background-color:rgb(0, 0,0);
+        }
+       
+        
+            
+        </style>
+    
+    </head>
+<body>
+
+    
+    <div id = "header">
+        <IMG SRC="HPELogo.jpg" id = "logo" ALT="some text" WIDTH=188 HEIGHT=80>
+        </IMG>
+            <div id = "headerElements">
+                <a href="#contentHeader">New Record |</a>
+                <a href="#thirdhalf">Upload Record</a>
+            </div>
+        
+    </div>
+        
+        <div id = "contentHeader">
+            <h1>Add Scorecard<hr></h1>
+            
+            </div>
+    
+        <div id = "addManualScorecard">
+            
+            <form id = "manualElements" action="scorecard.php" method="post">
+              <div id = "firsthalf">
+                  Fullname <br>
+                  <input type="text" name="fullname"><br>
+                  <br> Team <br>
+                  <input type="text" name="team" ><br>
+                  <br> Total Tickets <br>
+                  <input type="text" name="total_tickets" ><br>
+                  <br> E2E <br>
+                  <input type="text" name="e2e" ><br>
+                  <br> Disputed <br>
+                  <input type="text" name="disputed" ><br>
+                  
+              </div>
+              
+              <div id = "secondhalf">
+                  Missed Tickets <br>
+                  <input type="text" name="missed_tickets" ><br>
+                  <br>FYR <br>
+                  <input type="text" name="fyr" ><br>  
+                  <br>Controllable Mis <br>
+                  <input type="text" name="controllable_miss" ><br> 
+                  <br>Call Registration <br>
+                  <input type="text" name="call_registration" ><br>
+                  
+                        
+<!--
+                  <br>CSAT<br>
+                  <input type="text" name="csat" ><br>  
+                  <br> QA <br>
+                  <input type="text" name="qa" ><br>
+                  <br>External Escalation<br>
+                  <input type="text" name="escalation" ><br>  
+-->
+              </div>
+                
+                
+                <br>    
+              <input id = "thirdhalf" type="submit" value="Submit">
+            
+            </form>
+            
+        </div>
+    
+    
+       <div id = "contentHeader">
+            <h1>Add Others <hr></h1>
+            
+       </div>
+    
+       <div id = "addManualOthers">
+            
+              <div id = "firstTerm">
+                  <form id = "qaElements" action="qa.php" method="post">
+                      Fullname <br>
+                      <input type="text" name="fullname"><br>
+                      <br> QA <br>
+                      <input type="text" name="qa" ><br>
+                      <input id = "termButton" type="submit" value="Submit">
+                      
+                  </form>
+                  
+              </div>
+              
+              <div id = "secondTerm">
+                  <form id = "escalationElements" action="escalation.php" method="post">
+                      Fullname <br>
+                      <input type="text" name="fullname"><br>
+                      <br> Escalation <br>
+                      <input type="text" name="escalation" ><br>
+                    <input id = "termButton" type="submit" value="Submit">
+
+                  </form>
+              </div>
+                
+                <div id = "thirdTerm">
+                  <form id = "csatElements" action="csat.php" method="post">
+                      Fullname <br>
+                      <input type="text" name="fullname"><br>
+                      <br> CSAT <br>
+                      <input type="text" name="csat" ><br>
+                      <input id = "termButton" type="submit" value="Submit">
+
+                  </form>
+                </div>
+       </div>
+    
+    
+
+    
+    
+    
+    
+        
+    
+             <div id = "contentHeader">
+            <h1>Import <hr></h1>
+            
+            </div>
+        
+        <div id = "addAutomatic">
+            <div id = "uploadScorecard">
+                Upload Scorecard
+            </div>
+                                                 
+            <div id = "uploadCSAT"> 
+                Upload CSAT           
+            </div>
+                  
+            <div id = "uploadQA"> 
+                Upload QA               
+            </div>
+            
+            <div id = "uploadEscalation"> 
+                Upload External Escalation               
+            </div>
+            
+            
+            
+            
+        </div>
+    
+        <div id = "footer">
+            
+        </div>
+    
+        
+              
+</body>
+</html>     		
