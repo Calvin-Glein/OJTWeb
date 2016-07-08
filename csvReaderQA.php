@@ -25,11 +25,18 @@
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
+     
+     
+     
+     if(!move_uploaded_file($_FILES['file']['tmp_name'], 'uploadedCSV/' . "qa.csv")){
+         die('Error uploading file - check destination is writeable.');
+         
+         
+     }
 
-    $sql = "INSERT INTO scorecard (date, fullname, team, e2e, disputed, missed_tickets, fyr, total_tickets, controllable_miss, call_registration)
-    VALUES (now(), '$_POST[fullname]','$_POST[team]'    , '$_POST[e2e]','$_POST[disputed]','$_POST[missed_tickets]','$_POST[fyr]','$_POST[total_tickets]','$_POST[controllable_miss]','$_POST[call_registration]');";
-
-
+     
+      $sql = "LOAD DATA LOCAL INFILE 'uploadedCSV/qa.csv' INTO TABLE scorecard.qa FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY'\n' IGNORE 1 LINES  (@date, fullname, qa) SET date = STR_TO_DATE(@date, '%m/%d/%Y');"; 
+     
     if (mysqli_multi_query($conn, $sql)) {
         echo "added the data";
     } else {
@@ -45,4 +52,7 @@
 
 </body>
 </html>
+
+
+
 
